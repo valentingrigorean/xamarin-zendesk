@@ -8,8 +8,6 @@ https://develop.zendesk.com/hc/en-us/articles/360001074028-Develop-for-Zendesk-S
 
 sharpie bind  -sdk iphoneos11.4 ZendeskSDK.framework/Headers/ZendeskSDK.h  -scope ZendeskSDK.framework.framework/Headers -c -F .
 
-https://borsapp-test.zendesk.com/agent/admin/mobile_sdk v.grigorean@software-dep.net/wented213
-
 SwiftLibs  version:4.2.1
     AVFoundation.dylib 
     Core.dylib 
