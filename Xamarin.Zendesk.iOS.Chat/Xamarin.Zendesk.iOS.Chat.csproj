@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91BD8040-A8D2-4D26-8BE1-F15B8B2DF3B7}</ProjectGuid>
+    <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Xamarin.Zendesk.iOS.Chat</RootNamespace>
+    <AssemblyName>Xamarin.Zendesk.iOS.Chat</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="ZDCChat.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+      <Frameworks>MobileCoreServices SystemConfiguration AVFoundation AssetsLibrary</Frameworks>
+    </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xamarin.Zendesk.iOS.ChatApi\Xamarin.Zendesk.iOS.ChatApi.csproj">
+      <Project>{D918541A-B0C7-4AD7-BCC8-C64FBE8C4509}</Project>
+      <Name>Xamarin.Zendesk.iOS.ChatApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="ZDCChat.bundle\Info.plist" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatAttachIcon.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatAttachIcon%402x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatAttachIcon%403x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatErrorIcon.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatErrorIcon%402x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatErrorIcon%403x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatFileIcon.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatFileIcon%402x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatFileIcon%403x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatPdfIcon.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatPdfIcon%402x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatPdfIcon%403x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatThumbDownGrey.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatThumbDownGrey%402x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatThumbDownGrey%403x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatThumbDownWhite.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatThumbDownWhite%402x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatThumbDownWhite%403x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatThumbUpGrey.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatThumbUpGrey%402x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatThumbUpGrey%403x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatThumbUpWhite.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatThumbUpWhite%402x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatThumbUpWhite%403x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatTxtIcon.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatTxtIcon%402x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCChatTxtIcon%403x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCDefaultAvatar.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCDefaultAvatar%402x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCDefaultAvatar%403x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCOverlayBackground.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCOverlayBackground%402x.png" />
+    <BundleResource Include="ZDCChat.bundle\ZDCOverlayBackground%403x.png" />
+    <BundleResource Include="ZDCChatStrings.bundle\Info.plist" />
+    <BundleResource Include="ZDCChatStrings.bundle\ca.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\cs.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\da.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\de.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\en-GB.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\en.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\es.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\fi.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\fr.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\hi.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\id.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\it.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\ja.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\ko.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\nb.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\nl.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\pl.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\pt-BR.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\pt.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\ro.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\ru.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\sv.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\th.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\tr.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\vi.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\zh-Hans.lproj\Localizable.strings" />
+    <BundleResource Include="ZDCChatStrings.bundle\zh-Hant.lproj\Localizable.strings" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+</Project>

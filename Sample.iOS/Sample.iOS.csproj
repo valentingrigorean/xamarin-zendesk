@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Target Name="BeforeCodesign">
+  <Exec Command="$(_SdkDevPath)\Toolchains\XcodeDefault.xctoolchain\usr\bin\bitcode_strip %(_Frameworks.FullPath) -r -o %(_Frameworks.FullPath)" />
+</Target>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{167EB06F-429F-4BD4-99DB-20AC06CE7B84}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Sample.iOS</RootNamespace>
+    <AssemblyName>Sample.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>11888</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <MtouchVerbosity></MtouchVerbosity>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchVerbosity></MtouchVerbosity>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchVerbosity></MtouchVerbosity>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>51728</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchVerbosity></MtouchVerbosity>
+    <MtouchExtraArgs>-v -v -v -v</MtouchExtraArgs>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <PackageReference Include="Xamarin.Swift4.AVFoundation" Version="[4.2.0]" />     
+    <PackageReference Include="Xamarin.Swift4.Core" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.CoreAudio" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.CoreData" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.CoreFoundation" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.CoreGraphics" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.CoreImage" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.CoreLocation" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.CoreMedia" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.Darwin" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.Dispatch" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.Foundation" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.Metal" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.ObjectiveC" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.OS" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.Photos" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.QuartzCore" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.SIMD" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.SwiftOnoneSupport" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4.UIKit" Version="[4.2.0]" />
+    <PackageReference Include="Xamarin.Swift4">
+      <Version>4.0.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\First.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\First.imageset\vector.pdf" />
+    <ImageAsset Include="Assets.xcassets\Second.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Second.imageset\vector.pdf" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="FirstViewController.cs" />
+    <Compile Include="SecondViewController.cs" />
+    <Compile Include="FirstViewController.designer.cs">
+      <DependentUpon>FirstViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SecondViewController.designer.cs">
+      <DependentUpon>SecondViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationSupController.cs" />
+    <Compile Include="NavigationSupController.designer.cs">
+      <DependentUpon>NavigationSupController.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sample.Core\Sample.Core.csproj">
+      <Project>{B44EC90A-3FC7-4D30-8C75-40AD3C8098EB}</Project>
+      <Name>Sample.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Borsapp\Borsapp.csproj">
+      <Project>{3F77697F-4A1A-4F8D-B389-F82D22E51E80}</Project>
+      <Name>Borsapp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Borsapp.Core\Borsapp.Core.csproj">
+      <Project>{76AE8EA6-B93C-464A-9CAE-25B772B0D362}</Project>
+      <Name>Borsapp.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xamarin.Zendesk.iOS.ChatApi\Xamarin.Zendesk.iOS.ChatApi.csproj">
+      <Project>{D918541A-B0C7-4AD7-BCC8-C64FBE8C4509}</Project>
+      <Name>Xamarin.Zendesk.iOS.ChatApi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xamarin.Zendesk.iOS.Chat\Xamarin.Zendesk.iOS.Chat.csproj">
+      <Project>{91BD8040-A8D2-4D26-8BE1-F15B8B2DF3B7}</Project>
+      <Name>Xamarin.Zendesk.iOS.Chat</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xamarin.Zendesk.iOS.Core\Xamarin.Zendesk.iOS.Core.csproj">
+      <Project>{E1DF9244-1AFA-4512-9567-47A0584BB50A}</Project>
+      <Name>Xamarin.Zendesk.iOS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xamarin.Zendesk.iOS.Providers\Xamarin.Zendesk.iOS.Providers.csproj">
+      <Project>{97D2BE5E-407E-4D8F-8B37-0D4E24733968}</Project>
+      <Name>Xamarin.Zendesk.iOS.Providers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xamarin.Zendesk.iOS.Support\Xamarin.Zendesk.iOS.Support.csproj">
+      <Project>{EC105619-13BE-4E11-83E4-DC3113851282}</Project>
+      <Name>Xamarin.Zendesk.iOS.Support</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\..\..\packages\Xamarin.Swift4.4.0.0.1\build\Xamarin.Swift4.targets" Condition="Exists('..\..\..\packages\Xamarin.Swift4.4.0.0.1\build\Xamarin.Swift4.targets')" />
+</Project>

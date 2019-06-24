@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+    <attr
+        path="/api/package[@name='com.zopim.android.sdk']"
+        name="managedName">Zendesk.Chat</attr>
+    <attr
+        path="/api/package[@name='com.zopim.android.sdk.api']/class[@name='ZopimChat']/method[@name='getConfig' and count(parameter)=0]"
+        name="managedReturn">
+        IChatApiConfig
+    </attr>
+    <attr
+        path="/api/package[@name='com.zopim.android.sdk.api']/interface[@name='Chat']/method[@name='getConfig' and count(parameter)=0]"
+        name="managedReturn">
+        IChatApiConfig
+     </attr>
+    <remove-node
+        path="/api/package[@name='com.zopim.android.sdk.chatlog']" />
+    <add-node
+        path="/api/package[@name='com.zopim.android.sdk.api']">
+        <interface
+            abstract="true"
+            deprecated="not deprecated"
+            final="false"
+            name="ConfigBuilder"
+            static="false"
+            visibility="public">
+            <typeParameters>
+                <typeParameter
+                    name="T">
+                    <genericConstraints>
+                        <genericConstraint
+                            type="com.zopim.android.sdk.api.ApiConfigBuilder">
+                        </genericConstraint>
+                    </genericConstraints>
+                </typeParameter>
+            </typeParameters>
+            <method
+                abstract="true"
+                deprecated="not deprecated"
+                final="false"
+                name="emailTranscript"
+                native="false"
+                return="T"
+                static="false"
+                synchronized="false"
+                visibility="public">
+                <parameter
+                    name="p0"
+                    type="com.zopim.android.sdk.prechat.EmailTranscript">
+                </parameter>
+            </method>
+            <method
+                abstract="true"
+                deprecated="not deprecated"
+                final="false"
+                name="fileSending"
+                native="false"
+                return="T"
+                static="false"
+                synchronized="false"
+                visibility="public">
+                <parameter
+                    name="p0"
+                    type="boolean">
+                </parameter>
+            </method>
+            <method
+                abstract="true"
+                deprecated="not deprecated"
+                final="false"
+                name="preChatForm"
+                native="false"
+                return="T"
+                static="false"
+                synchronized="false"
+                visibility="public">
+                <parameter
+                    name="p0"
+                    type="com.zopim.android.sdk.prechat.PreChatForm">
+                </parameter>
+            </method>
+        </interface>
+    </add-node>
+</metadata>

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+    <attr
+        path="/api/package[@name='zendesk.support.request']"
+        name="managedName">Zendesk.Support</attr>
+    <remove-node
+        path="/api/package[@name='zendesk.support.request']/class[@name='StateRequestAttachment']" />
+    <remove-node
+        path="/api/package[@name='zendesk.support.request']/class[@name='ViewAlmostRealProgressBar']" />
+    <remove-node
+        path="/api/package[@name='zendesk.support.requestlist']/class[@name='RequestListActivity']/method[@name='refresh' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='zendesk.core.ActionHandlerRegistry']]" />
+    <add-node
+        path="/api/package[@name='zendesk.support.request']">
+        <!--<class
+            abstract="false"
+            deprecated="not deprecated"
+            extends="java.lang.Object"
+            extends-generic-aware="java.lang.Object"
+            final="false"
+            name="StateRequestAttachment"
+            static="false"
+            visibility="public">
+            <implements
+                name="java.io.Serializable"
+                name-generic-aware="java.io.Serializable">
+            </implements>
+            <implements
+                name="java.lang.Comparable"
+                name-generic-aware="java.lang.Comparable&lt;zendesk.support.request.StateRequestAttachment&gt;">
+            </implements>
+        </class>-->
+        <interface
+            abstract="true"
+            deprecated="not deprecated"
+            final="false"
+            name="RequestView"
+            static="false"
+            visibility="public">
+            <method
+                abstract="true"
+                deprecated="not deprecated"
+                final="false"
+                name="hasUnsavedInput"
+                native="false"
+                return="boolean"
+                static="false"
+                synchronized="false"
+                visibility="public">
+            </method>
+            <method
+                abstract="true"
+                deprecated="not deprecated"
+                final="false"
+                name="inflateMenu"
+                native="false"
+                return="boolean"
+                static="false"
+                synchronized="false"
+                visibility="public">
+                <parameter
+                    name="p0"
+                    type="android.view.MenuInflater">
+                </parameter>
+                <parameter
+                    name="p1"
+                    type="android.view.Menu">
+                </parameter>
+            </method>
+            <method
+                abstract="true"
+                deprecated="not deprecated"
+                final="false"
+                name="onOptionsItemClicked"
+                native="false"
+                return="boolean"
+                static="false"
+                synchronized="false"
+                visibility="public">
+                <parameter
+                    name="p0"
+                    type="android.view.MenuItem">
+                </parameter>
+            </method>
+        </interface>
+    </add-node>
+    <!-- 
+    <remove-node
+        path="/api/package[@name='zendesk.support.request']/class[@name='RequestUiConfig']/method[@name='getFiles' and count(parameter)=0]" />
+    <remove-node
+        path="/api/package[@name='zendesk.support.request']/class[@name='RequestUiConfig.Builder']/method[@name='withRequest' and count(parameter)=1 and parameter[1][@type='zendesk.support.Request']]" />
+    <remove-node
+        path="/api/package[@name='zendesk.support.guide']/class[@name='ViewArticleActivity.AttachmentRequestCallback']" />
+    <remove-node
+        path="/api/package[@name='zendesk.support.request']/class[@name='RequestViewConversationsEnabled']" />
+    <remove-node
+        path="/api/package[@name='zendesk.support.request']/class[@name='RequestViewConversationsDisabled']" />
+    <remove-node
+        path="/api/package[@name='zendesk.support.request']/class[@name='ViewAlmostRealProgressBar.Step']" />
+    <remove-node
+        path="/api/package[@name='zendesk.support']/class[@name='SdkDependencyProvider_MembersInjector']" />
+    <remove-node
+        path="/api/package[@name='zendesk.support']/class[@name='DaggerSupportSdkComponent']" />
+    <remove-node
+        path="/api/package[@name='zendesk.support.requestlist']/class[@name='RequestListActivity']/method[@name='refresh' and count(parameter)=2 and parameter[1][@type='android.content.Context'] and parameter[2][@type='zendesk.core.ActionHandlerRegistry']]" />
+    -->
+</metadata>

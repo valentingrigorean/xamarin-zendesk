@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EC105619-13BE-4E11-83E4-DC3113851282}</ProjectGuid>
+    <ProjectTypeGuids>{8FFB629D-F513-41CE-95D2-7ECE97B6EEEC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Xamarin.Zendesk.iOS.Support</RootNamespace>
+    <AssemblyName>Xamarin.Zendesk.iOS.Support</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <DefineConstants></DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="Structs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Xamarin.Zendesk.iOS.Core\Xamarin.Zendesk.iOS.Core.csproj">
+      <Project>{E1DF9244-1AFA-4512-9567-47A0584BB50A}</Project>
+      <Name>Xamarin.Zendesk.iOS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Xamarin.Zendesk.iOS.Providers\Xamarin.Zendesk.iOS.Providers.csproj">
+      <Project>{97D2BE5E-407E-4D8F-8B37-0D4E24733968}</Project>
+      <Name>Xamarin.Zendesk.iOS.Providers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <NativeReference Include="..\libs\iOS\4.2.1\ZendeskSDK.framework">
+      <Kind>Framework</Kind>
+      <ForceLoad>True</ForceLoad>
+      <Frameworks>MobileCoreServices SystemConfiguration Security MessageUI</Frameworks>
+      <LinkerFlags>-lxml2 -ObjC</LinkerFlags>
+    </NativeReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\Info.plist">
+      <Link>ZendeskSDKStrings.bundle\Info.plist</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\ar.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\ar.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\bg.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\bg.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\cs.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\cs.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\da.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\da.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\de.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\de.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\el.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\el.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\en-GB.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\en-GB.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\en.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\en.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\es.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\es.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\fi.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\fi.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\fil.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\fil.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\fr.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\fr.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\he.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\he.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\hi.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\hi.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\hu.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\hu.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\id.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\id.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\it.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\it.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\ja.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\ja.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\ko.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\ko.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\ms.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\ms.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\nb.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\nb.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\nl.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\nl.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\pl.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\pl.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\pt-BR.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\pt-BR.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\pt.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\pt.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\ro.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\ro.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\ru.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\ru.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\sv.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\sv.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\th.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\th.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\tr.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\tr.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\vi.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\vi.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\zh-Hans.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\zh-Hans.lproj\Localizable.strings</Link>
+    </BundleResource>
+    <BundleResource Include="..\libs\iOS\4.2.1\ZendeskSDKStrings.bundle\zh-Hant.lproj\Localizable.strings">
+      <Link>ZendeskSDKStrings.bundle\zh-Hant.lproj\Localizable.strings</Link>
+    </BundleResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.ObjCBinding.CSharp.targets" />
+</Project>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+    <attr
+        path="/api/package[@name='zendesk.support']"
+        name="managedName">Zendesk.Providers</attr>
+    <add-node
+        path="/api/package[@name='zendesk.support']">
+        <interface
+            abstract="true"
+            deprecated="not deprecated"
+            final="false"
+            name="SupportSdkProvidersComponent"
+            static="false"
+            visibility="public">
+            <method
+                abstract="true"
+                deprecated="not deprecated"
+                final="false"
+                name="inject"
+                native="false"
+                return="zendesk.support.Support"
+                static="false"
+                synchronized="false"
+                visibility="public">
+                <parameter
+                    name="p0"
+                    type="zendesk.support.Support">
+                </parameter>
+            </method>
+        </interface>
+    </add-node>
+</metadata>

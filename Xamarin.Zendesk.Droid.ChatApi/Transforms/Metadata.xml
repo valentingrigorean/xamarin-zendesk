@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <!--
+  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
+  
+  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
+  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
+  -->
+  <attr
+        path="/api/package[@name='com.zopim.android.sdk']"
+        name="managedName">Zendesk.ChatApi</attr>
+    <remove-node
+        path="/api/package[@name='com.zopim.android.sdk.store']" />
+    <remove-node
+        path="/api/package[@name='com.zopim.android.sdk.data']" />
+    <remove-node
+        path="/api/package[@name='com.zopim.android.sdk.model.items']" />
+    <add-node
+        path="/api/package[@name='com.zopim.android.sdk.api']">
+        <class
+            abstract="true"
+            deprecated="not deprecated"
+            extends="java.lang.Object"
+            extends-generic-aware="java.lang.Object"
+            final="false"
+            name="ApiConfigBuilder"
+            static="false"
+            visibility="public">
+            <implements
+                name="java.io.Serializable"
+                name-generic-aware="java.io.Serializable">
+            </implements>
+            <typeParameters>
+                <typeParameter
+                    name="T">
+                    <genericConstraints>
+                        <genericConstraint
+                            type="com.zopim.android.sdk.api.ApiConfigBuilder">
+                        </genericConstraint>
+                    </genericConstraints>
+                </typeParameter>
+            </typeParameters>
+            <method
+                abstract="false"
+                deprecated="not deprecated"
+                final="false"
+                name="department"
+                native="false"
+                return="T"
+                static="false"
+                synchronized="false"
+                visibility="public">
+                <parameter
+                    name="department"
+                    type="java.lang.String">
+                </parameter>
+            </method>
+            <method
+                abstract="false"
+                deprecated="not deprecated"
+                final="false"
+                name="tags"
+                native="false"
+                return="T"
+                static="false"
+                synchronized="false"
+                visibility="public">
+                <parameter
+                    name="tags"
+                    type="java.lang.String...">
+                </parameter>
+            </method>
+            <method
+                abstract="false"
+                deprecated="not deprecated"
+                final="false"
+                name="visitorPathOne"
+                native="false"
+                return="T"
+                static="false"
+                synchronized="false"
+                visibility="public">
+                <parameter
+                    name="visitorPath"
+                    type="java.lang.String">
+                </parameter>
+            </method>
+            <method
+                abstract="false"
+                deprecated="not deprecated"
+                final="false"
+                name="visitorPathTwo"
+                native="false"
+                return="T"
+                static="false"
+                synchronized="false"
+                visibility="public">
+                <parameter
+                    name="visitorPath"
+                    type="java.lang.String">
+                </parameter>
+            </method>
+            <field
+                deprecated="not deprecated"
+                final="false"
+                name="department"
+                static="false"
+                transient="false"
+                type="java.lang.String"
+                type-generic-aware="java.lang.String"
+                visibility="protected"
+                volatile="false">
+            </field>
+            <field
+                deprecated="not deprecated"
+                final="false"
+                name="referrer"
+                static="false"
+                transient="false"
+                type="java.lang.String"
+                type-generic-aware="java.lang.String"
+                visibility="protected"
+                volatile="false">
+            </field>
+            <field
+                deprecated="not deprecated"
+                final="false"
+                name="tags"
+                static="false"
+                transient="false"
+                type="java.lang.String[]"
+                type-generic-aware="java.lang.String[]"
+                visibility="protected"
+                volatile="false">
+            </field>
+            <field
+                deprecated="not deprecated"
+                final="false"
+                name="title"
+                static="false"
+                transient="false"
+                type="java.lang.String"
+                type-generic-aware="java.lang.String"
+                visibility="protected"
+                volatile="false">
+            </field>
+        </class>
+        <interface
+            abstract="true"
+            deprecated="not deprecated"
+            final="false"
+            name="BreadcrumbsApi"
+            static="false"
+            visibility="public">
+            <method
+                abstract="true"
+                deprecated="not deprecated"
+                final="false"
+                name="sendEvents"
+                native="false"
+                return="void"
+                static="false"
+                synchronized="false"
+                visibility="public">
+                <parameter
+                    name="p0"
+                    type="com.zopim.android.sdk.breadcrumbs.Event...">
+                </parameter>
+            </method>
+        </interface>
+        <interface
+            abstract="true"
+            deprecated="not deprecated"
+            final="false"
+            name="ChatServiceApi"
+            static="false"
+            visibility="public">
+            <implements
+                name="com.zopim.android.sdk.api.BreadcrumbsApi"
+                name-generic-aware="com.zopim.android.sdk.api.BreadcrumbsApi">
+            </implements>
+            <implements
+                name="com.zopim.android.sdk.api.ChatApi"
+                name-generic-aware="com.zopim.android.sdk.api.ChatApi">
+            </implements>
+            <method
+                abstract="true"
+                deprecated="not deprecated"
+                final="false"
+                name="isRunning"
+                native="false"
+                return="boolean"
+                static="false"
+                synchronized="false"
+                visibility="public">
+            </method>
+        </interface>
+    </add-node>
+</metadata>
